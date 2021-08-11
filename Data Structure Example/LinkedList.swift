@@ -32,15 +32,7 @@ class LinkedList<T> {
     }
     
     func remove(at index:Int) {
-        var node = head
-        //만약 연결리스트 크기보다 큰 index가 들어왔다면 그냥 append함.
-        for _ in 0...index {
-            if node?.next == nil {
-                break
-            }else {
-                node = node?.next
-            }
-        }
+       
     }
     
 
