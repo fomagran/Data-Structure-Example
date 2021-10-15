@@ -10,11 +10,9 @@ import Foundation
 class Node<T> {
     let value:T
     var next:Node?
-    var previous:Node?
     
-    init(value:T,next:Node? = nil,previous:Node? = nil) {
+    init(value:T,next:Node? = nil) {
         self.value = value
         self.next = next
-        self.previous = previous
     }
 }
