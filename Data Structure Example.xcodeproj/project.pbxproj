@@ -15,6 +15,7 @@
 		04148B0B26C3C31900252EA2 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148B0A26C3C31900252EA2 /* LinkedList.swift */; };
 		04148B0D26C3C33500252EA2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148B0C26C3C33500252EA2 /* Node.swift */; };
 		04F35DBC2719C63000630B17 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F35DBB2719C63000630B17 /* Heap.swift */; };
+		04FE5B34271D7A0600CD8ABF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE5B33271D7A0600CD8ABF /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		04148B0A26C3C31900252EA2 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		04148B0C26C3C33500252EA2 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		04F35DBB2719C63000630B17 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		04FE5B33271D7A0600CD8ABF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				04F35DBA2719C5F700630B17 /* Heap */,
 				049A50DB26CCAEAF00812CE0 /* LinkedList */,
 				04148ADA26C3C2FF00252EA2 /* AppDelegate.swift */,
+				04FE5B33271D7A0600CD8ABF /* SceneDelegate.swift */,
 				04148ADE26C3C2FF00252EA2 /* ViewController.swift */,
 				04148AE026C3C2FF00252EA2 /* Main.storyboard */,
 				04148AE326C3C30100252EA2 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 				04148B0D26C3C33500252EA2 /* Node.swift in Sources */,
 				04148ADB26C3C2FF00252EA2 /* AppDelegate.swift in Sources */,
 				04148B0B26C3C31900252EA2 /* LinkedList.swift in Sources */,
+				04FE5B34271D7A0600CD8ABF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
