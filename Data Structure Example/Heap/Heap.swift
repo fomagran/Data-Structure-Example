@@ -10,10 +10,6 @@ import Foundation
 struct MaxHeap {
     var nodes:[Int] = []
     
-    init(nodes:[Int]) {
-        self.nodes = nodes
-    }
-    
     private func getLeftChildIndex(_ parentIndex: Int) -> Int {
         return 2 * parentIndex + 1
     }
@@ -24,7 +20,6 @@ struct MaxHeap {
         return (childIndex - 1) / 2
     }
     
-    // Boolean Check
     private func hasLeftChild(_ index: Int) -> Bool {
         return getLeftChildIndex(index) < nodes.count
     }
@@ -35,12 +30,20 @@ struct MaxHeap {
         return getParentIndex(index) >= 0
     }
     
-    mutating func remove()  {
-        if nodes.isEmpty {
-            return
+    mutating private func heapifyUp() {
+        var index = nodes.count - 1
+        while hasParent(index) && nodes[getParentIndex(index)] < nodes[index] {
+            nodes.swapAt(getParentIndex(index),index)
+            index = getParentIndex(index)
         }
-        nodes.swapAt(0, nodes.count - 1)
-        nodes.removeLast()
+    }
+    
+    mutating func insert(_ node:Int) {
+        nodes.append(node)
+        heapifyUp()
+    }
+    
+    mutating private func heapifyDown() {
         var index = 0
         while hasLeftChild(index) {
             let leftIndex:Int = getLeftChildIndex(index)
@@ -59,12 +62,12 @@ struct MaxHeap {
         }
     }
     
-    mutating func insert(_ node:Int) {
-        nodes.append(node)
-        var index = nodes.count - 1
-        while hasParent(index) && nodes[getParentIndex(index)] < nodes[index] {
-            nodes.swapAt(getParentIndex(index),index)
-            index = getParentIndex(index)
+    mutating func remove()  {
+        if nodes.isEmpty {
+            return
         }
+        nodes.swapAt(0, nodes.count - 1)
+        nodes.removeLast()
+        heapifyDown()
     }
 }
