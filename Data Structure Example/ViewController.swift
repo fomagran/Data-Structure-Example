@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         
         var heap = MaxHeap(nodes: [5,4,3,1,2,1,2])
         heap.remove()
+        heap.insert(7)
         print(heap.nodes)
-        
     }
 }

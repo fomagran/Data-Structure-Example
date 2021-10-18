@@ -58,4 +58,13 @@ struct MaxHeap {
             index = biggerChildIndex
         }
     }
+    
+    mutating func insert(_ node:Int) {
+        nodes.append(node)
+        var index = nodes.count - 1
+        while hasParent(index) && nodes[getParentIndex(index)] < nodes[index] {
+            nodes.swapAt(getParentIndex(index),index)
+            index = getParentIndex(index)
+        }
+    }
 }
