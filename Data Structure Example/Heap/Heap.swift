@@ -10,6 +10,12 @@ import Foundation
 struct MaxHeap {
     var nodes:[Int] = []
     
+    init(nodes:[Int]) {
+        nodes.forEach {
+            insert($0)
+        }
+    }
+    
     private func getLeftChildIndex(_ parentIndex: Int) -> Int {
         return 2 * parentIndex + 1
     }
