@@ -14,6 +14,8 @@
 		04148AE726C3C30100252EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04148AE526C3C30100252EA2 /* LaunchScreen.storyboard */; };
 		04148B0B26C3C31900252EA2 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148B0A26C3C31900252EA2 /* LinkedList.swift */; };
 		04148B0D26C3C33500252EA2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148B0C26C3C33500252EA2 /* Node.swift */; };
+		04E810832743A4DA006CC8D3 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E810822743A4DA006CC8D3 /* HashTable.swift */; };
+		04E810852743A598006CC8D3 /* HashNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E810842743A598006CC8D3 /* HashNode.swift */; };
 		04F35DBC2719C63000630B17 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F35DBB2719C63000630B17 /* Heap.swift */; };
 		04FE5B34271D7A0600CD8ABF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE5B33271D7A0600CD8ABF /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,9 @@
 		04148AF826C3C30100252EA2 /* Data Structure ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Data Structure ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04148B0A26C3C31900252EA2 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		04148B0C26C3C33500252EA2 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		04E810822743A4DA006CC8D3 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		04E810842743A598006CC8D3 /* HashNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashNode.swift; sourceTree = "<group>"; };
+		04F19BE52743B9DD0076172A /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		04F35DBB2719C63000630B17 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		04FE5B33271D7A0600CD8ABF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +102,8 @@
 		04148AD926C3C2FF00252EA2 /* Data Structure Example */ = {
 			isa = PBXGroup;
 			children = (
+				04F19BE52743B9DD0076172A /* Test.playground */,
+				04E292D82743826D007D0799 /* HashTable */,
 				04F35DBA2719C5F700630B17 /* Heap */,
 				049A50DB26CCAEAF00812CE0 /* LinkedList */,
 				04148ADA26C3C2FF00252EA2 /* AppDelegate.swift */,
@@ -117,6 +124,15 @@
 				04148B0A26C3C31900252EA2 /* LinkedList.swift */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		04E292D82743826D007D0799 /* HashTable */ = {
+			isa = PBXGroup;
+			children = (
+				04E810822743A4DA006CC8D3 /* HashTable.swift */,
+				04E810842743A598006CC8D3 /* HashNode.swift */,
+			);
+			path = HashTable;
 			sourceTree = "<group>";
 		};
 		04F35DBA2719C5F700630B17 /* Heap */ = {
@@ -259,6 +275,8 @@
 			files = (
 				04148ADF26C3C2FF00252EA2 /* ViewController.swift in Sources */,
 				04F35DBC2719C63000630B17 /* Heap.swift in Sources */,
+				04E810832743A4DA006CC8D3 /* HashTable.swift in Sources */,
+				04E810852743A598006CC8D3 /* HashNode.swift in Sources */,
 				04148B0D26C3C33500252EA2 /* Node.swift in Sources */,
 				04148ADB26C3C2FF00252EA2 /* AppDelegate.swift in Sources */,
 				04148B0B26C3C31900252EA2 /* LinkedList.swift in Sources */,

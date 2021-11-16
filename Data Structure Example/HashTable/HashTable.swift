@@ -1,0 +1,73 @@
+//
+//  HashTable.swift
+//  Data Structure Example
+//
+//  Created by Fomagran on 2021/11/16.
+//
+
+import Foundation
+
+public struct HashTable<String,Value> {
+    public typealias Key = String
+    private typealias HashNode = (key:Key,value:Value)
+    private var bucket:[[HashNode]] = []
+    public init(bucketSize:Int) {
+        bucket = Array<[HashNode]>(repeatElement([], count: bucketSize))
+    }
+    
+    public subscript(key: String) -> Value? {
+        get {
+            return value(forKey: key)
+        }
+        set {
+            if let value = newValue {
+                updateValue(value, forKey: key)
+            } else {
+                removeValue(forKey: key)
+            }
+        }
+    }
+    
+    private func findIndexByDigitFolding(forKey key:Key) -> Int {
+        return "\(key)".unicodeScalars.reduce(0, { $0 + Int($1.value) }) % bucket.count
+    }
+    
+    public func value(forKey key: Key) -> Value? {
+        let index = findIndexByDigitFolding(forKey: key)
+        for element in bucket[index] {
+            if "\(element.key)" == "\(key)" {
+                return element.value
+            }
+        }
+        return nil
+    }
+    
+    @discardableResult
+    public mutating func updateValue(_ value: Value, forKey key: Key) -> Value? {
+        let index = findIndexByDigitFolding(forKey: key)
+        
+        for (i, element) in bucket[index].enumerated() {
+            if "\(element.key)" == "\(key)" {
+                let oldValue = element.value
+                bucket[index][i].value = value
+                return oldValue
+            }
+        }
+        
+        bucket[index].append((key: key, value: value))
+        return nil
+    }
+    
+    @discardableResult
+    public mutating func removeValue(forKey key: Key) -> Value? {
+        let index = findIndexByDigitFolding(forKey: key)
+        
+        for (i, element) in bucket[index].enumerated() {
+            if "\(element.key)" == "\(key)" {
+                bucket[index].remove(at: i)
+                return element.value
+            }
+        }
+        return nil
+    }
+}
