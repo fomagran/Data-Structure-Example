@@ -8,11 +8,13 @@
 import Foundation
 
 public struct HashTable<String,Value> {
+    
     public typealias Key = String
-    private typealias HashNode = (key:Key,value:Value)
-    private var bucket:[[HashNode]] = []
+    private typealias Element = (key:Key,value:Value)
+    private var bucket:[[Element]] = []
+    
     public init(bucketSize:Int) {
-        bucket = Array<[HashNode]>(repeatElement([], count: bucketSize))
+        bucket = Array<[Element]>(repeating:[], count: bucketSize)
     }
     
     public subscript(key: String) -> Value? {
@@ -42,32 +44,25 @@ public struct HashTable<String,Value> {
         return nil
     }
     
-    @discardableResult
-    public mutating func updateValue(_ value: Value, forKey key: Key) -> Value? {
+    public mutating func updateValue(_ value: Value, forKey key: Key) {
         let index = findIndexByDigitFolding(forKey: key)
         
         for (i, element) in bucket[index].enumerated() {
             if "\(element.key)" == "\(key)" {
-                let oldValue = element.value
                 bucket[index][i].value = value
-                return oldValue
             }
         }
         
         bucket[index].append((key: key, value: value))
-        return nil
     }
     
-    @discardableResult
-    public mutating func removeValue(forKey key: Key) -> Value? {
+    public mutating func removeValue(forKey key: Key) {
         let index = findIndexByDigitFolding(forKey: key)
         
         for (i, element) in bucket[index].enumerated() {
             if "\(element.key)" == "\(key)" {
                 bucket[index].remove(at: i)
-                return element.value
             }
         }
-        return nil
     }
 }
