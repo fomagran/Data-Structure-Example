@@ -14,9 +14,29 @@ class ViewController: UIViewController {
         
         var bst = BinarySearchTree<Int>()
         bst.insert(value: 10)
-        bst.remove(value: 10)
-        print("-------")
+        bst.insert(value: 11)
+        bst.insert(value: 8)
+        bst.insert(value: 1)
+        bst.insert(value: 3)
+        bst.remove(value: 8)
         printChild(node: bst.root)
+        
+//        10의 왼쪽 자식 :Optional(1)
+//        10의 오른쪽 자식 :Optional(11)
+//        1의 왼쪽 자식 :nil
+//        1의 오른쪽 자식 :Optional(3)
+//        3의 왼쪽 자식 :nil
+//        3의 오른쪽 자식 :nil
+//        11의 왼쪽 자식 :nil
+//        11의 오른쪽 자식 :nil
+        
+        //        10
+        //    1       11
+        //       3
+        
+  
+        
+        
     }
     
     func printChild(node:BSTNode<Int>?) {

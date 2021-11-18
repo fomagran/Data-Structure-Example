@@ -32,7 +32,6 @@ struct BinarySearchTree<T:Comparable> {
         
         while true {
             if node.value > value {
-
                 if node.leftChild == nil {
                     node.leftChild = BSTNode(value: value)
                     break
@@ -51,7 +50,6 @@ struct BinarySearchTree<T:Comparable> {
     }
     
     public mutating func remove(value:T) {
-        
         if root == nil {
             return
         }
@@ -61,14 +59,26 @@ struct BinarySearchTree<T:Comparable> {
         
         while node != nil {
             if node!.value == value {
+                //자식이 2개 있을 때
                 if node?.leftChild != nil && node?.rightChild != nil {
-                    node?.value = (findLeftChildMaxValue(node: node!.leftChild!) ?? node!.leftChild!).value
+                    let rightChild = node?.rightChild
+                    node = findLeftChildMaxValue(node: node!.leftChild!)
+                    node?.rightChild = rightChild
+                //자식이 왼쪽만 있을 떄
                 }else if node?.leftChild != nil{
-                    node?.value = node!.leftChild!.value
-                    node?.leftChild = nil
+                    if node!.value < parent.value {
+                        parent.leftChild = node?.leftChild
+                    }else {
+                        parent.rightChild = node?.leftChild
+                    }
+                //자식이 오른쪽만 있을 때
                 }else if node?.rightChild != nil {
-                    node?.value = node!.rightChild!.value
-                    node?.rightChild = nil
+                    if node!.value < parent.value {
+                        parent.leftChild = node?.rightChild
+                    }else {
+                        parent.rightChild = node?.rightChild
+                    }
+                //자식이 없을 때
                 }else {
                     if node?.value == root?.value {
                         root = nil
@@ -81,7 +91,7 @@ struct BinarySearchTree<T:Comparable> {
                     }
                 }
                 if value == root?.value {
-                    self.root = node
+                    self.root = node!
                 }
                 break
             }
@@ -90,31 +100,30 @@ struct BinarySearchTree<T:Comparable> {
         }
     }
     
-    private func findRightChildMinValue(node:BSTNode<T>) -> BSTNode<T>? {
-        var parent:BSTNode<T>? = node
-        var rightChild:BSTNode? = node.rightChild
-        
-        while rightChild?.rightChild != nil {
-            rightChild = rightChild?.leftChild!
-            parent = rightChild
-        }
-        if rightChild?.leftChild != nil {
-            parent?.rightChild = rightChild?.leftChild
-        }
-        return rightChild
-    }
-    
-    private func findLeftChildMaxValue(node:BSTNode<T>) -> BSTNode<T>? {
-        var parent:BSTNode<T>? = node
+    private func findRightChildMinValue(node:BSTNode<T>) -> BSTNode<T> {
+        var parent:BSTNode<T> = node
         var leftChild:BSTNode? = node.leftChild
         
         while leftChild?.leftChild != nil {
             leftChild = leftChild?.leftChild!
-            parent = leftChild
+            parent = leftChild!
         }
         if leftChild?.rightChild != nil {
-            parent?.leftChild = leftChild?.rightChild
+            parent.rightChild = leftChild?.rightChild
         }
-        return leftChild
+        return leftChild ?? parent
+    }
+    
+    private func findLeftChildMaxValue(node:BSTNode<T>) -> BSTNode<T> {
+        var parent:BSTNode<T> = node
+        var rightChild:BSTNode? = node.rightChild
+        while rightChild?.rightChild != nil {
+            rightChild = rightChild?.rightChild!
+            parent = rightChild!
+        }
+        if rightChild?.leftChild != nil {
+            parent.leftChild = rightChild?.leftChild
+        }
+        return rightChild ?? parent
     }
 }
