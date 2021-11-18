@@ -12,25 +12,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var hashTable = HashTable<String, Any>(bucketSize: 13)
-        //삽입
-        hashTable["foma"] = "foma"
-        hashTable["gran"] = "gran"
-
-        //충돌(foma와 mofa는 digitfolding에 의해 똑같은 인덱스가 나옵니다.)
-        hashTable["mofa"] = "mofa"
-
-        print(hashTable["foma"],hashTable["gran"],hashTable["mofa"],hashTable["fomagran"])
-        //Optional("foma") Optional("gran") Optional("mofa") nil
-
-        //삭제
-        hashTable["foma"] = nil
-
-        //업데이트
-        hashTable["gran"] = "foma"
-
-        print(hashTable["foma"],hashTable["gran"],hashTable["mofa"],hashTable["fomagran"])
-        //nil Optional("foma") Optional("mofa") nil
+        var bst = BinarySearchTree<Int>()
+        bst.insert(value: 10)
+        bst.remove(value: 10)
+        print("-------")
+        printChild(node: bst.root)
+    }
     
+    func printChild(node:BSTNode<Int>?) {
+        if node == nil { return }
+        print("\(node!.value)의 왼쪽 자식 :\(node!.leftChild?.value)")
+        print("\(node!.value)의 오른쪽 자식 :\(node!.rightChild?.value)")
+        printChild(node: node!.leftChild)
+        printChild(node: node!.rightChild)
     }
 }
+
+
+//        10
+//    8       11
+//1
+//    3
+
