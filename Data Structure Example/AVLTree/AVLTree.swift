@@ -29,9 +29,10 @@ struct AVLTree<T:Comparable> {
         }
         
         var node:AVLNode = root!
+        var nodes:[AVLNode<T>] = []
         
         while true {
-            node.height += 1
+            nodes.append(node)
             if node.value > value {
                 if node.leftChild == nil {
                     node.leftChild = AVLNode(value: value)
@@ -49,6 +50,5 @@ struct AVLTree<T:Comparable> {
             }
         }
     }
-    
 }
 

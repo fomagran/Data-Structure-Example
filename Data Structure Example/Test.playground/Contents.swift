@@ -1,21 +1,24 @@
 import UIKit
 
-//버킷 사이즈 설정
-var hashTable = HashTable<String, Any>(bucketSize: 13)
+var avl = AVLTree<Int>()
+avl.insert(value: 7)
+avl.insert(value: 4)
+avl.insert(value: 3)
+avl.insert(value: 2)
+avl.insert(value: 5)
+avl.insert(value: 8)
+avl.insert(value: 10)
+avl.insert(value: 11)
+avl.insert(value: 9)
 
-//삽입
-hashTable["foma"] = "foma"
-hashTable["gran"] = "gran"
+//func printChild(node:AVLNode<Int>?) {
+//    if node == nil { return }
+//    print("\(node!.value)의 왼쪽 자식 :\(node!.leftChild?.value)")
+//    print("\(node!.value)의 오른쪽 자식 :\(node!.rightChild?.value)")
+//    print(node!.height)
+//    printChild(node: node!.leftChild)
+//    printChild(node: node!.rightChild)
+//}
+//
+//printChild(node: avl.root)
 
-//충돌(foma와 mofa는 digitfolding에 의해 똑같은 인덱스가 나옵니다.)
-hashTable["mofa"] = "mofa"
-
-print(hashTable["foma"],hashTable["gran"],hashTable["mofa"],hashTable["fomagran"])
-
-//삭제
-hashTable["foma"] = nil
-
-//업데이트
-hashTable["gran"] = "foma"
-
-print(hashTable["foma"],hashTable["gran"],hashTable["mofa"],hashTable["fomagran"])

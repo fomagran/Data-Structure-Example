@@ -12,45 +12,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var bst = BinarySearchTree<Int>()
-        bst.insert(value: 10)
-        bst.insert(value: 11)
-        bst.insert(value: 8)
-        bst.insert(value: 1)
-        bst.insert(value: 3)
-        bst.remove(value: 8)
-        printChild(node: bst.root)
-        
-//        10의 왼쪽 자식 :Optional(1)
-//        10의 오른쪽 자식 :Optional(11)
-//        1의 왼쪽 자식 :nil
-//        1의 오른쪽 자식 :Optional(3)
-//        3의 왼쪽 자식 :nil
-//        3의 오른쪽 자식 :nil
-//        11의 왼쪽 자식 :nil
-//        11의 오른쪽 자식 :nil
-        
-        //        10
-        //    1       11
-        //       3
-        
-  
-        
-        
+        var avl = AVLTree<Int>()
+        avl.insert(value: 7)
+        avl.insert(value: 4)
+        avl.insert(value: 3)
+        avl.insert(value: 2)
+        avl.insert(value: 5)
+        avl.insert(value: 8)
+        avl.insert(value: 10)
+        avl.insert(value: 11)
+        avl.insert(value: 9)
+        printChild(node: avl.root)
     }
     
-    func printChild(node:BSTNode<Int>?) {
+    func printChild(node:AVLNode<Int>?) {
         if node == nil { return }
         print("\(node!.value)의 왼쪽 자식 :\(node!.leftChild?.value)")
         print("\(node!.value)의 오른쪽 자식 :\(node!.rightChild?.value)")
+        print(node!.height)
         printChild(node: node!.leftChild)
         printChild(node: node!.rightChild)
     }
 }
 
-
-//        10
-//    8       11
-//1
-//    3
-
+//        7
+//    4        8
+//  3   5         10
+//2              9  11
