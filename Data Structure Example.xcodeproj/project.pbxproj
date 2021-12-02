@@ -16,6 +16,8 @@
 		04148B0D26C3C33500252EA2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04148B0C26C3C33500252EA2 /* Node.swift */; };
 		0440DD0C274517CF00A550FB /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440DD0B274517CF00A550FB /* BinarySearchTree.swift */; };
 		0444220627465968004876F4 /* BSTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444220527465968004876F4 /* BSTNode.swift */; };
+		04D995732758B9DF00CD0C51 /* AVLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D995722758B9DF00CD0C51 /* AVLNode.swift */; };
+		04D995752758C07200CD0C51 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D995742758C07200CD0C51 /* AVLTree.swift */; };
 		04E810832743A4DA006CC8D3 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E810822743A4DA006CC8D3 /* HashTable.swift */; };
 		04F35DBC2719C63000630B17 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F35DBB2719C63000630B17 /* Heap.swift */; };
 		04FE5B34271D7A0600CD8ABF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE5B33271D7A0600CD8ABF /* SceneDelegate.swift */; };
@@ -33,6 +35,8 @@
 		04148B0C26C3C33500252EA2 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		0440DD0B274517CF00A550FB /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		0444220527465968004876F4 /* BSTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTNode.swift; sourceTree = "<group>"; };
+		04D995722758B9DF00CD0C51 /* AVLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLNode.swift; sourceTree = "<group>"; };
+		04D995742758C07200CD0C51 /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		04E810822743A4DA006CC8D3 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		04F19BE52743B9DD0076172A /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		04F35DBB2719C63000630B17 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				04F19BE52743B9DD0076172A /* Test.playground */,
+				04D995712758B83200CD0C51 /* AVLTree */,
 				0440DD0A2745179700A550FB /* BinarySearchTree */,
 				04E292D82743826D007D0799 /* HashTable */,
 				04F35DBA2719C5F700630B17 /* Heap */,
@@ -101,6 +106,15 @@
 				04148B0A26C3C31900252EA2 /* LinkedList.swift */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		04D995712758B83200CD0C51 /* AVLTree */ = {
+			isa = PBXGroup;
+			children = (
+				04D995722758B9DF00CD0C51 /* AVLNode.swift */,
+				04D995742758C07200CD0C51 /* AVLTree.swift */,
+			);
+			path = AVLTree;
 			sourceTree = "<group>";
 		};
 		04E292D82743826D007D0799 /* HashTable */ = {
@@ -191,11 +205,13 @@
 			files = (
 				04148ADF26C3C2FF00252EA2 /* ViewController.swift in Sources */,
 				0444220627465968004876F4 /* BSTNode.swift in Sources */,
+				04D995752758C07200CD0C51 /* AVLTree.swift in Sources */,
 				04F35DBC2719C63000630B17 /* Heap.swift in Sources */,
 				04E810832743A4DA006CC8D3 /* HashTable.swift in Sources */,
 				04148B0D26C3C33500252EA2 /* Node.swift in Sources */,
 				0440DD0C274517CF00A550FB /* BinarySearchTree.swift in Sources */,
 				04148ADB26C3C2FF00252EA2 /* AppDelegate.swift in Sources */,
+				04D995732758B9DF00CD0C51 /* AVLNode.swift in Sources */,
 				04148B0B26C3C31900252EA2 /* LinkedList.swift in Sources */,
 				04FE5B34271D7A0600CD8ABF /* SceneDelegate.swift in Sources */,
 			);
