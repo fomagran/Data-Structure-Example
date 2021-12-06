@@ -22,20 +22,50 @@ class ViewController: UIViewController {
         avl.insert(value: 10)
         avl.insert(value: 11)
         avl.insert(value: 9)
+        
+        avl.remove(8)
         printChild(node: avl.root)
     }
     
     func printChild(node:AVLNode<Int>?) {
         if node == nil { return }
-        print("\(node!.value)의 왼쪽 자식 :\(node!.leftChild?.value)")
-        print("\(node!.value)의 오른쪽 자식 :\(node!.rightChild?.value)")
-        print(node!.height)
+        print(node!.value)
+        print("왼쪽 자식 \(node?.leftChild?.value)")
+        print("왼쪽 자식 \(node?.rightChild?.value)")
         printChild(node: node!.leftChild)
         printChild(node: node!.rightChild)
     }
 }
 
-//        7
-//    4        8
-//  3   5         10
-//2              9  11
+//        4
+//    3        9
+//  2        7    10
+//         5        11
+
+//4
+//왼쪽 자식 Optional(3)
+//왼쪽 자식 Optional(8)
+//3
+//왼쪽 자식 Optional(2)
+//왼쪽 자식 nil
+//2
+//왼쪽 자식 nil
+//왼쪽 자식 nil
+//8
+//왼쪽 자식 Optional(7)
+//왼쪽 자식 Optional(10)
+//7
+//왼쪽 자식 Optional(5)
+//왼쪽 자식 nil
+//5
+//왼쪽 자식 nil
+//왼쪽 자식 nil
+//10
+//왼쪽 자식 Optional(9)
+//왼쪽 자식 Optional(11)
+//9
+//왼쪽 자식 nil
+//왼쪽 자식 nil
+//11
+//왼쪽 자식 nil
+//왼쪽 자식 nil
